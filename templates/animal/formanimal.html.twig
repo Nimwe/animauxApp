@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Crea et modif Animal{% endblock %}
+
+{% block body %}
+<style>
+.uneclasse {
+    color:red; 
+}
+</style>
+
+<div class="p-3 mb-2 bg-success text-white"><h1> Création et modification des animaux </h1></div>
+
+
+
+    {{ form_start(monform)}} 
+    <br>
+    {# Pour personnaliser les inputs : #}
+
+    <i class="fa fa-paw">{{ form_row(monform.nom, {
+        'attr': {'class':'uneclasse' },
+        })
+    }}</i>
+    <br>
+    {{ form_widget(monform) }} 
+    <br>
+    <input type = 'submit' value = 'Envoyer'> 
+    <br>    
+    {{ form_end(monform) }} 
+   
+</div>
+{% endblock %}

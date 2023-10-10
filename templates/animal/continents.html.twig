@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Continents{% endblock %}
+
+{% block body %}
+<style></style>
+
+<div class="p-3 mb-2 bg-warning-subtle text-emphasis-warning">
+
+    <h1>Voici les continents avec les animaux qui y vivent</h1>
+    <h6><a href="/creacontinent"> Create </a></h6>
+
+</div>  
+ 
+    {% for continent in Continents  %}
+    <h2> <a href="/continent/{{continent.id}}"> {{ continent.libelle }} </a></h2>
+    <p><a href="/modifcontinent/{{continent.id}}"> Update</a>
+       <a href="/supprcontinent/{{continent.id}}"> Delete </a>
+    </p>
+    {% endfor %}
+
+{% endblock %}

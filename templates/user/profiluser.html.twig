@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}profil user{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin-top: 10px; margin-left: 800px;}
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+<h1> Bienvenue  </h1>
+</div>
+
+<br>
+
+<p>
+{% if (app.user) %}
+    {{app.user.Prenom}} {{app.user.Nom}} <br>
+    {# Profession :<br>
+    Adresse :<br>
+    Mail:<br>
+    Téléphone : #}
+{% endif %}
+</p>
+
+{% if (app.user) %}
+    <a href="{{ path('app_animaux') }}">Liste des animaux</a>
+    <a href="{{ path('app_continents') }}">Liste des continents</a>
+    <a href="{{ path('app_personnes') }}">Liste des proprietaires</a>
+{% endif  %}
+<br>
+{% if (app.user) %}
+    <a href="{{ path('app_logout') }}">Déconnexion</a>
+{% endif  %}
+
+{% endblock %}

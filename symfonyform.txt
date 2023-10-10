@@ -1,0 +1,20 @@
+Symfony 
+
+Formulaires
+
+Les formulaires sont gérés à part ds symfony :
+
+ - Se positionner dans le terminal -> php bin/console make:form
+ - Name of form class -> AnimalType (Par convention on met le nom de l'entité 
+pour laquelle on va faire le formulaire)
+ - Name of entity ( entitée sur laquelle on fait la liaison)-> Animal
+
+=> Création d'une classe formulaire dans le repertoire Form (dans Entity) avec 2 fonctions
+
+Dans VSCode aller dans AnimalController.php pour créer une nouvelle route( On appelle ça une annotation)
+qui permettra de modifier un animal
+
+
+
+
+

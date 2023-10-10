@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Crea et modif Continent{% endblock %}
+
+{% block body %}
+<style>
+.uneclasse {
+    color:red; 
+}
+</style>
+
+<div class="p-3 mb-2 bg-success text-white">
+<h1> Création et modification des continents </h1>
+</div>
+ 
+    {{ form_start(formcont)}} 
+    <br>
+    {{ form_widget(formcont) }} 
+    <br>
+    <input type = 'submit' value = 'Envoyer'> 
+    <br>    
+    {{ form_end(formcont) }} 
+   
+{% endblock %}

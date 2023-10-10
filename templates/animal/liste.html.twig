@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste{% endblock %}
+
+{% block body %}
+<style>
+body {
+    margin:30px;
+    background-color: #F2EBDC ;
+}
+</style>
+
+<div >
+    <h1 class="text-center">Voici la liste des animaux</h1>
+    <h5 class="text-end mr-50"><a href="/modifanimal"> Create </a></h5>
+</div>
+  
+<div class="row row-cols-lg-4 align-items-center text-center">
+    {% for animal in Animaux  %}
+    <div class="col-auto">
+     <h2><a href="/animal/{{animal.id}}"> {{ animal.nom }} </a></h2>
+     <img src = "{{asset('img/'~animal.image)}}">
+     <p><a href="/modifanimal/{{animal.id}}"> Update</a>
+     <a href="/suppranimal/{{animal.id}}"> Delete </a></p>
+     </div>
+    {% endfor %}
+</div>
+    
+</div>
+{% endblock %}

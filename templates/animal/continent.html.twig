@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Continents{% endblock %}
+
+{% block body %}
+<style></style>
+
+<div class="p-3 mb-2 bg-success-subtle text-emphasis-success">
+
+    <h1>Les animaux qui vivent en {{ continent.libelle }} </h1>
+    
+</div>  
+    
+   
+
+    {% for animal in continent.animaux %}
+    <br>
+    <a href="/animal/{{animal.id}}"> {{ animal.nom }} </a>
+    <br>
+    <img src = "{{asset('img/'~animal.image)}}">
+    {% endfor %}
+
+    
+
+{% endblock %}

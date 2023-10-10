@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Animal{% endblock %}
+
+{% block body %}
+<style> 
+</style>
+{# {{ dump(animal) }} #}
+    <div class="p-3 mb-2 bg-danger-subtle text-emphasis-danger">
+
+    <h1> {{ animal.nom }} <br> </h1>
+    <h5> {{ animal.nomLatin }} </h5>
+
+    {% for continent in animal.continents %}
+     <a href="/continent/{{continent.id}}">{{ continent.libelle }}</a>
+    {% endfor %}
+
+    </div>
+    
+    <p> <img src = "{{asset('img/'~animal.image)}}"> {{ animal.description | nl2br}} </p>
+    <p> Le {{ animal.nom }} pese en moyenne {{animal.poids}} et fait partit de 
+    la famille des {{ animal.especes.libelle }} </p> 
+
+</div>
+{% endblock %}

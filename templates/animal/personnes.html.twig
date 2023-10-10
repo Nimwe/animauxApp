@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personnes{% endblock %}
+
+{% block body %}
+<style></style>
+
+<div class="p-3 mb-2 bg-warning-subtle text-emphasis-warning">
+
+    <h1>Voici la liste des personnes possédant des animaux</h1>
+
+    <h6><a href="/creapersonne"> Create </a></h6>
+
+</div>
+    
+    {% for personne in Personnes  %}
+
+     <h2><a href="/personne/{{personne.id}}"> 
+     {{ personne.prenom }} {{ personne.nom }} 
+     </a></h2>
+
+     <p><a href="/modifpersonne/{{personne.id}}"> Update</a>
+     <a href="/supprpersonne/{{personne.id}}"> Delete </a></p>
+    {% endfor %}
+
+</div>
+{% endblock %}
